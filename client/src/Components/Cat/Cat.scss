@@ -1,0 +1,94 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.cat {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+
+  @include tablet {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &__container {
+    //width: 18rem;
+  }
+
+  &__btn-name {
+    @include tablet {
+      width: 50%;
+      line-height: 2rem;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-left: 1rem;
+    }
+  }
+
+  &__number {
+    color: $background-color;
+  }
+
+  &__remove {
+    background-color: $error-remove;
+    padding: 0.6rem;
+    border-radius: 4px;
+    border: none;
+    color: $font-color;
+    font-family: "Klee One";
+    font-size: 1rem;
+    @include tablet {
+      width: 9.375rem;
+      margin-bottom: 0.88rem;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    text-decoration: none;
+    //color: rgb(66, 62, 62);
+  }
+
+  &__image {
+    border-radius: 4px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    @include tablet {
+      width: 22rem;
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10%;
+    width: 80%;
+    @include tablet {
+      margin-left: 0;
+      padding-left: 1.2rem;
+    }
+  }
+
+  &__label {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $background-color;
+  }
+
+  &__age {
+    margin-top: 0;
+    color: $font-color;
+    margin-bottom: 1rem;
+  }
+}

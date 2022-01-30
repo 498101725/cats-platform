@@ -1,0 +1,32 @@
+@use "../../styles/partials/typography";
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.nav {
+  //background-color: $third-background-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+  &__header {
+    padding-top: 1rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    padding-bottom: 1rem;
+    @include tablet {
+      margin-left: 2.5rem;
+    }
+
+    :hover {
+      color: $font-color;
+      background-color: $background-color;
+      border-radius: 4px;
+      padding: 0.8rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $background-color;
+  }
+}

@@ -1,0 +1,138 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/_typography";
+@use "../../styles/partials/mixins" as *;
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  position: relative;
+
+  @include desktop {
+    //align-items: center;
+  }
+  &__cat {
+    display: none;
+    position: absolute;
+    top: 41rem;
+    right: -3rem;
+    width: 380px;
+    height: 200px;
+    animation: walk-animation 2s steps(12) infinite;
+    background-image: url("../../assets/images/cat-walking.png");
+
+    @include tablet {
+      display: block;
+      top: 11rem;
+      right: 4rem;
+    }
+
+    @include desktop {
+      right: 18rem;
+    }
+  }
+  @keyframes walk-animation {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: 0 -2391px;
+    }
+  }
+  &__icon {
+    width: 2rem;
+  }
+
+  &__profile {
+    //height: 16rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    @include tablet {
+      //height: 22rem;
+      width: 100%;
+    }
+
+    // @include desktop {
+    //   height: 30rem;
+    //   object-fit: contain;
+    // }
+  }
+
+  &__section {
+    display: flex;
+    text-align: left;
+    justify-content: space-between;
+    margin: 0 1rem 1rem 0rem;
+    margin-top: 0.6rem;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  &__label {
+    text-align: center;
+    width: 11.25rem;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+    color: #423e3e;
+    border-radius: 4px;
+    background-color: rgba(142, 221, 221, 0.952);
+  }
+  &__container {
+    color: $background-color;
+    font-size: 1.1rem;
+    width: 80%;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(142, 221, 221, 0.952);
+    @include tablet {
+      width: 90%;
+      margin-right: 2.5rem;
+    }
+  }
+
+  &__img {
+    @include tablet {
+      width: 28rem;
+      margin-left: 2rem;
+      display: flex;
+    }
+  }
+
+  &__outter {
+    margin-top: 1rem;
+    border-radius: 4px;
+    @include tablet {
+      margin-left: 2rem;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-radius: 4px;
+  }
+
+  &__btn {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    color: #423e3e;
+    font-weight: 600;
+    padding: 0.3rem;
+    border-radius: 4px;
+    height: 3rem;
+    width: 10rem;
+    line-height: 2rem;
+    border: 3px solid rgba(142, 221, 221, 0.952);
+  }
+}
