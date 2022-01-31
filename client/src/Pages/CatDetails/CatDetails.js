@@ -54,14 +54,7 @@ class CatDetails extends Component {
         <div className="details__img">
           <img className="details__profile" src={image} />
         </div>
-        <ul className="details__cat">
-          <li className="details__cat details__one">Please</li>
-          <li className="details__cat details__two">Adopt</li>
-          <li className="details__cat details__three">instead</li>
-          <li className="details__cat details__four">of</li>
-          <li className="details__cat details__five">Shop</li>
-          <li className="details__cat details__six">!</li>
-        </ul>
+
         <div className="details__outter">
           <section className="details__section">
             <label className="details__label">Name</label>

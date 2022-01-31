@@ -10,6 +10,7 @@ function Cat({ id, name, image, age }) {
       id,
       name,
       age,
+      image,
     };
 
     axios
@@ -27,10 +28,10 @@ function Cat({ id, name, image, age }) {
       <Link className="cat__link" to={`/cats/${id}`}>
         <div className="cat__container">
           <div className="cat__name">
-            <h3 className="cat__label">{name}</h3>
-            <h4 className="cat__age">
-              <strong className="cat__number">{age} year(s) old</strong>
-            </h4>
+            <span className="cat__label">{name}</span>
+            <span className="cat__age">
+              <strong className="cat__number">{age} year(s) </strong>
+            </span>
           </div>
 
           <img className="cat__image" src={image} />

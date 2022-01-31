@@ -1,0 +1,98 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/_typography";
+@use "../../styles/partials/mixins" as *;
+
+.toBeAdopted {
+  background-image: url("../../assets/images/houses.svg");
+  background-repeat: no-repeat;
+  animation: cityAnimation 120s linear infinite;
+  background-color: $third-background-color;
+  position: relative;
+
+  &__moon {
+    top: -1.5rem;
+    position: absolute;
+    margin: auto;
+    right: 4rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 25px 10px 0px 0px $text-background-color;
+
+    @include tablet {
+      top: -4rem;
+    }
+  }
+
+  &__cat {
+    width: 500px;
+    height: 300px;
+    background-image: url("../../assets/images/cat.svg");
+    animation: catAnimation 1.3s steps(16) infinite;
+    @include tablet {
+      visibility: visible;
+    }
+  }
+
+  @keyframes catAnimation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -8120px 0;
+    }
+  }
+
+  @keyframes cityAnimation {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+  &__header {
+    color: $background-color;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__sentence {
+    animation: showUp 6s;
+    color: $text-background-color;
+    animation-timing-function: linear;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+      0px 18px 23px rgba(0, 0, 0, 0.1);
+  }
+
+  @keyframes showUp {
+    0% {
+      opacity: 0.1;
+    }
+
+    30% {
+      opacity: 0.3;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+
+    70% {
+      opacity: 0.7;
+    }
+
+    90% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

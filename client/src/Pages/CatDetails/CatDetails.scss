@@ -7,12 +7,7 @@
   flex-direction: column;
   margin-left: 1rem;
   margin-right: 1rem;
-  // margin-top: 2rem;
   position: relative;
-
-  @include desktop {
-    //align-items: center;
-  }
 
   &__cat {
     display: flex;
@@ -29,17 +24,14 @@
     }
 
     li {
-      margin-right: 0.5rem;
+      margin-right: 0.8rem;
+      font-size: 1.8rem;
     }
   }
-  &__one {
-    animation-delay: 3s;
-    @include tablet {
-      margin-left: 2rem;
-    }
-  }
+
   &__two {
     animation-delay: 3.2s;
+    margin-left: 1rem;
   }
   &__three {
     animation-delay: 3.4s;
@@ -50,9 +42,7 @@
   &__five {
     animation-delay: 3.8s;
   }
-  &__six {
-    animation-delay: 4s;
-  }
+
   @keyframes scale {
     0% {
       opacity: 0;
@@ -69,7 +59,6 @@
   }
 
   &__profile {
-    //height: 16rem;
     width: 100%;
     object-fit: cover;
     border-radius: 4px;
@@ -78,14 +67,8 @@
       rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     @include tablet {
-      //height: 22rem;
       width: 100%;
     }
-
-    // @include desktop {
-    //   height: 30rem;
-    //   object-fit: contain;
-    // }
   }
 
   &__section {

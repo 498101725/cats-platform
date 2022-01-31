@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import Left from "../../assets/icon/left.png";
 import "./CatAdd.scss";
 
 const origin = "http://localhost:9001";
@@ -105,10 +107,9 @@ function CatAdd() {
 
   return (
     <div className="container">
-      <div className="container__moon"></div>
-      <div className="container__cat"></div>
       <div className="add">
         <form onSubmit={submitHandler} className="add__form">
+          <div className="add__pro">{image ? <img src={image} /> : ""}</div>
           <div className="add__profile">
             <input
               type="file"
@@ -121,7 +122,7 @@ function CatAdd() {
               Upload
             </button>
           </div>
-          {image ? <img src={image} /> : ""}
+
           <div className="add__combination">
             <div className="add__one">
               <div className="add__labels">
@@ -271,23 +272,11 @@ function CatAdd() {
                   <h2>Upload Meow</h2>
                 </button>
               </div>
-
-              {/* <div className="add__profile">
-                <label>Upload Meow Image</label>
-                <input
-                  type="file"
-                  name="image"
-                  className="add__upload"
-                  onChange={(e) => setFile(e.target.files[0])}
-                  required
-                />
-                <button disabled={!file} onClick={onUploadImage}>
-                  Upload
-                </button>
-              </div>
-              {image ? <img src={image} /> : ""} */}
             </div>
           </div>
+          <Link to={`${origin}/cats`} className="add__link">
+            <img src={Left} className="add__icon" />
+          </Link>
         </form>
       </div>
     </div>

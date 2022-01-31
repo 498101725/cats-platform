@@ -20,6 +20,11 @@ function Nav() {
           Upload
         </Link>
       </h3>
+      <h3 className="nav__header">
+        <Link className="nav__link" to="/cats/adopted">
+          More
+        </Link>
+      </h3>
     </div>
   );
 }

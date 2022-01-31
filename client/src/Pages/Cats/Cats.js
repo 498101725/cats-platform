@@ -15,6 +15,7 @@ class Cats extends Component {
     this.state = {
       catsList: [],
       ageFilterType: "olderThan1",
+      image: null,
     };
   }
 
@@ -34,6 +35,10 @@ class Cats extends Component {
         catsList: response.data,
       });
     });
+
+    // axios.get(`${origin}/cats/upload`).then(({ data }) => {
+    //   this.setState({ image: `${origin}${data.path}` });
+    // });
   }
 
   onAgeFilterChanged = (e) => {

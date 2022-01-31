@@ -3,8 +3,6 @@
 @use "../../styles/partials/variables.scss" as *;
 
 .catss {
-  padding-top: 2rem;
-
   &__nums {
     width: 50%;
     @include tablet {
