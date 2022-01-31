@@ -45,8 +45,10 @@ function CatAdd() {
     email: "",
     breed: "",
     city: "",
-    image: null,
   });
+
+  const [file, setFile] = useState();
+  const [image, setImage] = useState();
 
   const inputHandler = (e) => {
     const newData = { ...data };
@@ -65,7 +67,7 @@ function CatAdd() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    debugger;
+
     axios
       .post(`${origin}/cats`, {
         name: data.name,
@@ -79,6 +81,25 @@ function CatAdd() {
       })
       .then((response) => {
         console.log(response.data);
+      });
+  };
+
+  const onUploadImage = (e) => {
+    e.preventDefault();
+    e.cancelBubble = true;
+    const data = new FormData();
+    data.append("image", file);
+    axios
+      .post(`${origin}/cats/upload`, data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then(({ data }) => {
+        setImage(`${origin}${data.path}`);
+      })
+      .catch((e) => {
+        console.error("Error", e);
       });
   };
 
@@ -237,6 +258,21 @@ function CatAdd() {
                   <h2>Upload Meow</h2>
                 </button>
               </div>
+
+              <div className="add__labels">
+                <label>Upload Meow Image</label>
+                <input
+                  type="file"
+                  name="image"
+                  className="add__upload"
+                  onChange={(e) => setFile(e.target.files[0])}
+                  required
+                />
+                <button disabled={!file} onClick={onUploadImage}>
+                  Upload
+                </button>
+              </div>
+              {image ? <img src={image} /> : ""}
             </div>
           </div>
         </form>

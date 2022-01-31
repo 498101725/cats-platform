@@ -1,7 +1,25 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
+const path = require("path");
 const uniqid = require("uniqid");
+
+router.post("/upload", (req, res) => {
+  if (!req.files || !req.files.image) {
+    res.status(400).send("No files were uploaded.");
+    return;
+  }
+  const imageFile = req.files.image;
+  const imageName = uniqid() + "." + imageFile.name.split(".").pop();
+  const uploadPath = path.resolve(__dirname, "../public/uploads/", imageName);
+
+  imageFile.mv(uploadPath, (err) => {
+    if (err) {
+      return res.status(500).send(err);
+    }
+    res.json({ path: "/uploads/" + imageName });
+  });
+});
 
 // re-usable function to read data file;
 const readCats = () => {

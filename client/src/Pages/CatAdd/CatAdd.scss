@@ -55,6 +55,10 @@
   margin-left: 1rem;
   margin-right: 1rem;
 
+  &__upload {
+    margin-top: 2rem;
+  }
+
   &__combination {
     @include tablet {
       display: flex;
