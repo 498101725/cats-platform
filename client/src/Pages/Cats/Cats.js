@@ -48,9 +48,12 @@ class Cats extends Component {
       <div className="catss">
         <section className="catss__bottom">
           <div className="catss__row">
-            <h4 className="catss__ages catss__ages--years" htmlFor="olderThan1">
+            <label
+              className="catss__ages catss__ages--years"
+              htmlFor="olderThan1"
+            >
               Years old
-            </h4>
+            </label>
             <input
               checked={this.state.ageFilterType === "olderThan1"}
               type="radio"
@@ -63,14 +66,14 @@ class Cats extends Component {
             />
           </div>
           <div className="catss__row">
-            <h4 className="catss__ages catss__ages--feature">
+            <label className="catss__ages catss__ages--feature">
               <span className="catss__num">{this.displayedCats.length}</span>
-            </h4>
+            </label>
           </div>
           <div className="catss__row">
-            <h4 className="catss__ages" htmlFor="lessThan1">
+            <label className="catss__ages" htmlFor="lessThan1">
               Months old
-            </h4>
+            </label>
             <input
               className="catss__ages--months"
               checked={this.state.ageFilterType === "lessThan1"}

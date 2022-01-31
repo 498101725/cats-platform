@@ -109,6 +109,19 @@ function CatAdd() {
       <div className="container__cat"></div>
       <div className="add">
         <form onSubmit={submitHandler} className="add__form">
+          <div className="add__profile">
+            <input
+              type="file"
+              name="image"
+              className="add__upload"
+              onChange={(e) => setFile(e.target.files[0])}
+              required
+            />
+            <button disabled={!file} onClick={onUploadImage}>
+              Upload
+            </button>
+          </div>
+          {image ? <img src={image} /> : ""}
           <div className="add__combination">
             <div className="add__one">
               <div className="add__labels">
@@ -223,7 +236,7 @@ function CatAdd() {
               </div>
             </div>
 
-            <div className="add__one">
+            <div className="add__one add__one--feature">
               <div className="add__labels">
                 <label htmlFor="city">City</label>
                 <input
@@ -259,7 +272,7 @@ function CatAdd() {
                 </button>
               </div>
 
-              <div className="add__labels">
+              {/* <div className="add__profile">
                 <label>Upload Meow Image</label>
                 <input
                   type="file"
@@ -272,7 +285,7 @@ function CatAdd() {
                   Upload
                 </button>
               </div>
-              {image ? <img src={image} /> : ""}
+              {image ? <img src={image} /> : ""} */}
             </div>
           </div>
         </form>

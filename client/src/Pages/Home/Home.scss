@@ -3,10 +3,17 @@
 
 .home {
   &__bottom {
+    margin-bottom: 5rem;
     background-color: $third-background-color;
     @include tablet {
       margin-left: 2rem;
       margin-right: 2rem;
+    }
+  }
+
+  &__up {
+    @include tablet {
+      display: flex;
     }
   }
   &__image {

@@ -3,37 +3,37 @@
 @use "../../styles/partials/mixins" as *;
 
 .container {
-  background-image: url("../../assets/images/houses.svg");
+  // background-image: url("../../assets/images/houses.svg");
   background-repeat: no-repeat;
   animation: cityAnimation 120s linear infinite;
   background-color: $third-background-color;
   position: relative;
 
-  &__moon {
-    top: -1.5rem;
-    position: absolute;
-    margin: auto;
-    right: 4rem;
-    width: 3rem;
-    height: 3rem;
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 25px 10px 0px 0px $text-background-color;
+  // &__moon {
+  //   top: -1.5rem;
+  //   position: absolute;
+  //   margin: auto;
+  //   right: 4rem;
+  //   width: 3rem;
+  //   height: 3rem;
+  //   background-color: transparent;
+  //   border-radius: 50%;
+  //   box-shadow: 25px 10px 0px 0px $text-background-color;
 
-    @include tablet {
-      top: -4rem;
-    }
-  }
+  //   @include tablet {
+  //     top: -4rem;
+  //   }
+  // }
 
-  &__cat {
-    width: 500px;
-    height: 300px;
-    background-image: url("../../assets/images/cat.svg");
-    animation: catAnimation 1.3s steps(16) infinite;
-    @include tablet {
-      visibility: visible;
-    }
-  }
+  // &__cat {
+  //   width: 500px;
+  //   height: 300px;
+  //   background-image: url("../../assets/images/cat.svg");
+  //   animation: catAnimation 1.3s steps(16) infinite;
+  //   @include tablet {
+  //     visibility: visible;
+  //   }
+  // }
   @keyframes catAnimation {
     0% {
       background-position: 0 0;
@@ -56,7 +56,29 @@
   margin-right: 1rem;
 
   &__upload {
-    margin-top: 2rem;
+    //margin-top: 2rem;
+    color: $background-color;
+    font-family: "klee one";
+  }
+
+  &__profile {
+    border: 1px solid $background-color;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    @include tablet {
+      margin-right: 2rem;
+      margin-left: 2rem;
+    }
+    button {
+      border-radius: 4px;
+      font-family: "klee one";
+      background-color: $background-color;
+      border: none;
+    }
   }
 
   &__combination {
@@ -68,6 +90,9 @@
     }
   }
   &__one {
+    &--feature {
+      margin-bottom: 3rem;
+    }
     @include tablet {
       width: 33%;
     }
@@ -117,7 +142,7 @@
     border-radius: 4px;
     font-family: "Klee One";
     font-weight: 600;
-    margin-top: 1rem;
+    margin-top: 2rem;
     color: $font-color;
     width: 100%;
   }
@@ -185,7 +210,13 @@
   }
 }
 
-input[type="radio"] {
-  accent-color: $font-color;
+input[type="radio"]:checked {
+  accent-color: red;
   transform: scale(1.8);
+}
+input[type="file"]::-webkit-file-upload-button {
+  background-color: $background-color;
+  border-radius: 4px;
+  font-family: "klee one";
+  border: none;
 }

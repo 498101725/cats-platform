@@ -7,41 +7,63 @@
   flex-direction: column;
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-top: 2rem;
+  // margin-top: 2rem;
   position: relative;
 
   @include desktop {
     //align-items: center;
   }
+
   &__cat {
-    display: none;
-    position: absolute;
-    top: 41rem;
-    right: -3rem;
-    width: 380px;
-    height: 200px;
-    animation: walk-animation 2s steps(12) infinite;
-    background-image: url("../../assets/images/cat-walking.png");
+    display: flex;
+    list-style: none;
+    border-radius: 4px;
+    color: $error-remove;
+    margin-top: 1rem;
+    animation: scale 5s;
+    font-size: 1.3rem;
+    padding-left: 0;
 
     @include tablet {
-      display: block;
-      top: 11rem;
-      right: 4rem;
+      font-size: 1.5rem;
     }
 
-    @include desktop {
-      right: 18rem;
+    li {
+      margin-right: 0.5rem;
     }
   }
-  @keyframes walk-animation {
-    from {
-      background-position: 0 0;
+  &__one {
+    animation-delay: 3s;
+    @include tablet {
+      margin-left: 2rem;
     }
+  }
+  &__two {
+    animation-delay: 3.2s;
+  }
+  &__three {
+    animation-delay: 3.4s;
+  }
+  &__four {
+    animation-delay: 3.7s;
+  }
+  &__five {
+    animation-delay: 3.8s;
+  }
+  &__six {
+    animation-delay: 4s;
+  }
+  @keyframes scale {
+    0% {
+      opacity: 0;
+      transform: scale3d(0, 0, 0);
+    }
+    100% {
+      opacity: 5;
+      color: yellow;
+    }
+  }
 
-    to {
-      background-position: 0 -2391px;
-    }
-  }
   &__icon {
     width: 2rem;
   }
