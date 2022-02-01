@@ -56,6 +56,9 @@ class CatDetails extends Component {
         </div>
 
         <div className="details__outter">
+          <section className="details__section details__section--p">
+            <p>Please use the email provided below to reach the cat</p>
+          </section>
           <section className="details__section">
             <label className="details__label">Name</label>
             <section className="details__container">

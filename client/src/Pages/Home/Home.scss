@@ -10,7 +10,11 @@
       margin-right: 2rem;
     }
   }
-
+  &__purpose {
+    border-bottom: 2px solid $background-color;
+    line-height: 1.8rem;
+    padding-bottom: 0.3rem;
+  }
   &__up {
     @include tablet {
       display: flex;

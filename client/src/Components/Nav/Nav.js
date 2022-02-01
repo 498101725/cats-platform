@@ -4,7 +4,7 @@ import "./Nav.scss";
 function Nav() {
   return (
     <div className="nav">
-      <h3 className="nav__header">
+      <h3 className="nav__header nav__header--feature">
         <Link className="nav__link" to="/">
           Home
         </Link>

@@ -13,7 +13,12 @@ function Home() {
             Straycats have very short lives around 3 ~ 5 years. Being homeless,
             foodless, not knowing where the next meal comes from, not always in
             good health. They are forced to bear crises emerging from around.
-            Each cat is a unique living life, they deserve to be treated well.{" "}
+            Each cat is a unique living life, they deserve to be treated well.
+            <br />
+            <span className="home__purpose">
+              This platform not only aims to help straycats to find a home, but
+              also offers chances for people to find back their lost ones.{" "}
+            </span>
           </p>
 
           <p className="home__paragraph">

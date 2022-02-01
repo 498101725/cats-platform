@@ -1,10 +1,6 @@
-import { Link } from "react-router-dom";
 import { Component } from "react";
 import axios from "axios";
-import Icon from "../../assets/icon/left.png";
-import IconRight from "../../assets/icon/right.png";
 import Cat from "../../Components/Cat/Cat";
-import CatsToBeAdopted from "../CatToBeAdopted/CatsToBeAdopted";
 import "./Cats.scss";
 
 const origin = "http://localhost:9001";
@@ -16,6 +12,7 @@ class Cats extends Component {
       catsList: [],
       ageFilterType: "olderThan1",
       image: null,
+      name: "",
     };
   }
 
@@ -46,6 +43,12 @@ class Cats extends Component {
       ageFilterType: e.target.value,
     });
     localStorage.setItem("ageFilterType", JSON.stringify(e.target.value));
+  };
+  onNameChanged = (e) => {
+    console.log(e.target.value);
+    this.setState({
+      name: e.target.value,
+    });
   };
 
   render() {
@@ -93,20 +96,56 @@ class Cats extends Component {
           </div>
         </section>
 
+        <section className="catss__name">
+          <input
+            className="catss__ipt"
+            type="text"
+            placeholder="Please enter Meow's name"
+            value={this.state.name}
+            onChange={(e) => {
+              this.onNameChanged(e);
+            }}
+          />
+        </section>
+
+        {/* duplicate code */}
+        <div>
+          {" "}
+          {this.displayedCats
+            .filter((cat) => {
+              return cat.name === this.state.name;
+            })
+            .map((cat) => {
+              return (
+                <div className="filtered" key={cat.id}>
+                  <Cat
+                    id={cat.id}
+                    name={cat.name}
+                    image={cat.image}
+                    age={cat.age}
+                  />
+                </div>
+              );
+            })}
+        </div>
+        {/* duplicate code */}
         <ul className="catss__cats">
-          {this.displayedCats.map((cat) => {
-            return (
-              <li className="cats__cat" key={cat.id}>
-                <Cat
-                  id={cat.id}
-                  name={cat.name}
-                  image={cat.image}
-                  age={cat.age}
-                  getData={this.chosenCat}
-                />
-              </li>
-            );
-          })}
+          {this.displayedCats
+            .filter((cat) => {
+              return cat.name !== this.state.name;
+            })
+            .map((cat) => {
+              return (
+                <li className="cats__cat" key={cat.id}>
+                  <Cat
+                    id={cat.id}
+                    name={cat.name}
+                    image={cat.image}
+                    age={cat.age}
+                  />
+                </li>
+              );
+            })}
         </ul>
       </div>
     );

@@ -22,6 +22,14 @@
       border-radius: 4px;
       padding: 0.8rem;
     }
+
+    &--feature {
+      margin-left: 1rem;
+
+      @include tablet {
+        margin-left: 3rem;
+      }
+    }
   }
 
   &__link {
