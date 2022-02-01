@@ -80,6 +80,7 @@ function CatAdd() {
         email: data.email,
         breed: data.breed,
         city: data.city,
+        image,
       })
       .then((response) => {
         console.log(response.data);
@@ -129,7 +130,9 @@ function CatAdd() {
                 <label className="add__gdr">Gender</label>
                 <div className="add__labelss">
                   <section className="add__radio">
-                    <label htmlFor="gender">Boy</label>
+                    <label className="add__bg" htmlFor="gender">
+                      Boy
+                    </label>
                     <input
                       value="boy"
                       type="radio"
@@ -139,7 +142,7 @@ function CatAdd() {
                     />
                   </section>
                   <section className="add__radio">
-                    <label>Girl</label>
+                    <label className="add__bg">Girl</label>
                     <input
                       value="girl"
                       type="radio"
@@ -170,7 +173,9 @@ function CatAdd() {
                   autoComplete="new-password"
                   type="number"
                   name="age"
-                  placeholder="please enter a number "
+                  min="0.1"
+                  step="0.1"
+                  placeholder="please enter a number"
                   className="add__input"
                   onChange={inputHandler}
                   required
@@ -274,9 +279,6 @@ function CatAdd() {
               </div>
             </div>
           </div>
-          <Link to={`${origin}/cats`} className="add__link">
-            <img src={Left} className="add__icon" />
-          </Link>
         </form>
       </div>
     </div>

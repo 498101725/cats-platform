@@ -96,7 +96,8 @@
     font-size: 1.1rem;
     color: #423e3e;
     border-radius: 4px;
-    background-color: rgba(142, 221, 221, 0.952);
+    background-color: $select-color;
+    opacity: 1;
   }
   &__container {
     color: $background-color;

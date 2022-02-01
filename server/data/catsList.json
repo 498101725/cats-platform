@@ -1,17 +1,5 @@
 [
     {
-        "id": "1",
-        "name": "Alice",
-        "age": "1",
-        "breed": "Domestic short hair",
-        "personality": "Shy",
-        "health": "Poor",
-        "gender": "female",
-        "email": "123@meow.com",
-        "city": "Mississauga",
-        "image": "http://localhost:9001/img/1.webp"
-    },
-    {
         "id": "2",
         "name": "Milky",
         "age": "3",
@@ -72,50 +60,6 @@
         "image": "http://localhost:9001/img/6.jpg"
     },
     {
-        "id": "sktwiw2nkyrxkyvk",
-        "name": "Sophie",
-        "age": "1.5",
-        "breed": "",
-        "personality": "",
-        "health": "",
-        "gender": "",
-        "email": "",
-        "city": ""
-    },
-    {
-        "id": "sktwiw2nkyrxm5rs",
-        "name": "April",
-        "age": "3",
-        "breed": "",
-        "personality": "",
-        "health": "",
-        "gender": "",
-        "email": "",
-        "city": ""
-    },
-    {
-        "id": "sktwiw2nkyrxn17c",
-        "name": "Adward",
-        "age": "1",
-        "breed": "Garfield",
-        "personality": "Arrogant",
-        "health": "good",
-        "gender": "Girl",
-        "email": "xlzlzhl@gmail.com",
-        "city": "Toronto"
-    },
-    {
-        "id": "sktwiw2nkys2y6x6",
-        "name": "Victoria",
-        "age": "",
-        "breed": "",
-        "personality": "",
-        "health": "",
-        "gender": "",
-        "email": "498101725@qq.com",
-        "city": "MISSISSAUGA"
-    },
-    {
         "id": "sktwi14lbkywfwf4q",
         "name": "susan liu",
         "age": "2 years old",
@@ -156,25 +100,15 @@
         "city": "MISSISSAUGA"
     },
     {
-        "id": "sktwi1lpikz0finc8",
-        "name": "Lucy",
-        "age": "3",
-        "breed": "Domestic Shorthair",
-        "personality": "good",
-        "health": "good",
-        "gender": "boy",
-        "city": "Mississauga",
-        "email": "498101725@qq.com"
-    },
-    {
-        "id": "sktwi1lpikz0o1x9g",
-        "name": "Mia",
-        "age": "0.1",
+        "id": "sktwi48gkz4aijyr",
+        "name": "Bob",
+        "image": "http://localhost:9001/uploads/sktwi48gkz4ahnk4.jpg",
+        "age": "0.8",
         "breed": "American Shorthair",
-        "personality": "Playful",
+        "personality": "Brave",
         "health": "Good",
-        "gender": "girl",
-        "city": "Mississauga",
-        "email": "me@qq.com"
+        "gender": "boy",
+        "city": "New York",
+        "email": "laskjd@meow.com"
     }
 ]

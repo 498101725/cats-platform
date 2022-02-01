@@ -4,7 +4,7 @@ import axios from "axios";
 
 const origin = "http://localhost:9001";
 
-function Cat({ id, name, image, age }) {
+function Cat({ id, name, image, age, refreshList }) {
   const deleteHandler = (id) => {
     const data = {
       id,
@@ -16,7 +16,7 @@ function Cat({ id, name, image, age }) {
     axios
       .delete(`${origin}/cats/${id}`, data)
       .then((data) => {
-        console.log(data);
+        refreshList();
       })
       .catch((err) => {
         console.log(err);

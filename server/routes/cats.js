@@ -45,6 +45,10 @@ router.get("/", (req, res) => {
   res.json(strippedData);
 });
 
+// router.get('/upload',(req,res)=>{
+
+// })
+
 // get endpoint for individual cat;
 router.get("/:id", (req, res) => {
   // read the file
@@ -116,6 +120,7 @@ router.post("/", (req, res) => {
 // delete
 
 router.delete(`/:id`, (req, res) => {
+  //
   const data = JSON.parse(fs.readFileSync("./data/catsList.json"));
   const foundCat = data.find((cat) => {
     return cat.id === req.params.id;
@@ -124,7 +129,17 @@ router.delete(`/:id`, (req, res) => {
     res.status(404).send("this meow is not there !");
     return;
   }
-
+  const imageName = foundCat.image ? foundCat.image.split("/uploads/")[1] : "";
+  if (imageName) {
+    const imagePath = path.resolve(__dirname, "../public/uploads/", imageName);
+    if (fs.existsSync(imagePath)) {
+      try {
+        fs.unlinkSync(imagePath);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
   const newData = data.filter((cat) => {
     return cat.id !== req.params.id;
   });

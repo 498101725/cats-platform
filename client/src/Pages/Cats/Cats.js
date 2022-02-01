@@ -23,19 +23,12 @@ class Cats extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${origin}/cats`).then((response) => {
-      const ageFilterType =
+    this.setState({
+      ageFilterType:
         JSON.parse(localStorage.getItem("ageFilterType")) ||
-        this.state.ageFilterType;
-      this.setState({
-        ageFilterType,
-        catsList: response.data,
-      });
+        this.state.ageFilterType,
     });
-
-    // axios.get(`${origin}/cats/upload`).then(({ data }) => {
-    //   this.setState({ image: `${origin}${data.path}` });
-    // });
+    this.onListRefresh();
   }
 
   onAgeFilterChanged = (e) => {
@@ -48,6 +41,14 @@ class Cats extends Component {
     console.log(e.target.value);
     this.setState({
       name: e.target.value,
+    });
+  };
+
+  onListRefresh = () => {
+    axios.get(`${origin}/cats`).then((response) => {
+      this.setState({
+        catsList: response.data,
+      });
     });
   };
 
@@ -108,31 +109,13 @@ class Cats extends Component {
           />
         </section>
 
-        {/* duplicate code */}
-        <div>
-          {" "}
-          {this.displayedCats
-            .filter((cat) => {
-              return cat.name === this.state.name;
-            })
-            .map((cat) => {
-              return (
-                <div className="filtered" key={cat.id}>
-                  <Cat
-                    id={cat.id}
-                    name={cat.name}
-                    image={cat.image}
-                    age={cat.age}
-                  />
-                </div>
-              );
-            })}
-        </div>
-        {/* duplicate code */}
         <ul className="catss__cats">
           {this.displayedCats
             .filter((cat) => {
-              return cat.name !== this.state.name;
+              return (
+                !this.state.name ||
+                cat.name.toLowerCase().indexOf(this.state.name) !== -1
+              );
             })
             .map((cat) => {
               return (
@@ -142,6 +125,7 @@ class Cats extends Component {
                     name={cat.name}
                     image={cat.image}
                     age={cat.age}
+                    refreshList={this.onListRefresh}
                   />
                 </li>
               );

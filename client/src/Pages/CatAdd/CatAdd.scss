@@ -78,12 +78,13 @@
 
     label {
       width: 30%;
-      background-color: $background-color;
+      background-color: $select-color;
       border-radius: 4px;
       padding: 1rem 0;
       color: $font-color;
       margin-top: 1.3rem;
       font-weight: bold;
+      opacity: 0.5;
 
       @include tablet {
         margin-bottom: 1rem;
@@ -119,11 +120,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 30%;
-    margin-right: 5rem;
     justify-content: space-around;
     @include tablet {
-      width: 10%;
+      margin-right: 2rem;
     }
     @include desktop {
       width: 40%;
@@ -133,7 +132,7 @@
   &__radio {
     margin-right: 1rem;
     @include tablet {
-      margin-left: 0.2rem;
+      // margin-left: 0.2rem;
     }
     label {
       background-color: $third-background-color;
@@ -167,8 +166,8 @@
       border-color: $background-color;
     }
 
-    &:focus:required:invalid {
-      color: $font-color;
+    &:focus {
+      color: black !important;
       background-color: $input-focused-color;
     }
 
