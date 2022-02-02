@@ -16,6 +16,12 @@
     font-family: "klee one";
   }
 
+  &__link {
+    text-decoration: none;
+    color: $font-color;
+    text-align: center;
+  }
+
   &__profile {
     border: 1px solid $background-color;
     border-radius: 4px;
@@ -109,11 +115,6 @@
     @include tablet {
       margin-top: 0.88rem;
     }
-  }
-
-  &__link {
-    text-decoration: none;
-    color: $font-color;
   }
 
   &__labelss {

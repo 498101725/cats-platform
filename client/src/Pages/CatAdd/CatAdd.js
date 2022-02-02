@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import Left from "../../assets/icon/left.png";
+import { useHistory } from "react-router-dom";
 import "./CatAdd.scss";
 
 const origin = "http://localhost:9001";
 
 function CatAdd() {
+  // can only use useHistory hook to manually change router instead of using Link
+  const history = useHistory();
   const catBreeds = [
     "",
     "Domestic Shorthair",
@@ -83,6 +84,9 @@ function CatAdd() {
         image,
       })
       .then((response) => {
+        // only navigate to the newly uploaded video detail page when successfully uploaded
+        history.push("/cats");
+        alert("Cat uploaded successfully");
         console.log(response.data);
       });
   };

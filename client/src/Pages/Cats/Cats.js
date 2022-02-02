@@ -113,8 +113,7 @@ class Cats extends Component {
           {this.displayedCats
             .filter((cat) => {
               return (
-                !this.state.name ||
-                cat.name.toLowerCase().indexOf(this.state.name) !== -1
+                !this.state.name || cat.name.indexOf(this.state.name) !== -1
               );
             })
             .map((cat) => {
