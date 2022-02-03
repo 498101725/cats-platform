@@ -38,7 +38,6 @@ class Cats extends Component {
     localStorage.setItem("ageFilterType", JSON.stringify(e.target.value));
   };
   onNameChanged = (e) => {
-    console.log(e.target.value);
     this.setState({
       name: e.target.value,
     });

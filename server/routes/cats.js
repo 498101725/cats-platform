@@ -45,10 +45,6 @@ router.get("/", (req, res) => {
   res.json(strippedData);
 });
 
-// router.get('/upload',(req,res)=>{
-
-// })
-
 // get endpoint for individual cat;
 router.get("/:id", (req, res) => {
   // read the file

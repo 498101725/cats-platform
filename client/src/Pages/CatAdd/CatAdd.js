@@ -83,11 +83,9 @@ function CatAdd() {
         city: data.city,
         image,
       })
-      .then((response) => {
+      .then(() => {
         // only navigate to the newly uploaded video detail page when successfully uploaded
         history.push("/cats");
-        alert("Cat uploaded successfully");
-        console.log(response.data);
       });
   };
 

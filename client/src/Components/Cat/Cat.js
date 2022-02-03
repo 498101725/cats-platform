@@ -15,7 +15,7 @@ function Cat({ id, name, image, age, refreshList }) {
 
     axios
       .delete(`${origin}/cats/${id}`, data)
-      .then((data) => {
+      .then(() => {
         refreshList();
       })
       .catch((err) => {

@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Finding-Meows-Homes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is a responsive web application specifically designed for users who want to adopt straycats.
+Users can also upload any straycats information through this platform.
 
-## Available Scripts
+It is also a platform for users to find their lost cats by typing names of cats.
 
-In the project directory, you can run:
+# Tech stack used
 
-### `npm start`
+```
+    Node engine: >=8
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Component driver: React JS
+    CSS Compiler:     Sass
+    Server engine:    Express
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# usage instructions
 
-### `npm test`
+You need to run front-end and backend seperately by following below guide
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## backend
 
-### `npm run build`
+Go to server directory, then run below command
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+    npm install // install dependencies
+    npm start   // start server
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## front-end
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Go to client directory, then run below command
 
-### `npm run eject`
+```
+    npm install // install dependencies
+    npm start   // start the application
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+After app started, The [web app](http://localhost:3000) will be automatically opened in your default browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# API references
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Origin: http://localhost:9001
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| API          | Description                         | Method | Content-type        |
+| ------------ | ----------------------------------- | ------ | ------------------- |
+| /cats        | Fetch list of registered cats       | GET    |                     |
+| /cats/{id}   | Get detail for a specific cat       | GET    |                     |
+| /cats        | Register a new cat with detail      | POST   | application/json    |
+| /cats/{id}   | Remove a cat when a cat is adopted  | DELETE |                     |
+| /cats/upload | Upload image of cat before register | POST   | multipart/form-data |
 
-## Learn More
+# screenshots
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## List View
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Cat list view](/doc/assets/list-view.png)
 
-### Code Splitting
+## Register view
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Cat create view](/doc/assets/create-view.png)
 
-### Analyzing the Bundle Size
+# Lessons learned & next steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+learned uploading images through http post method.
+trying to make a cat food donation functionality in this platform.
